@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: fenkaki-antiraid
+    runtime: node
+    plan: free
+    region: frankfurt
+    buildCommand: npm install && node deploy-commands.js
+    startCommand: node index.js
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: DISCORD_TOKEN
+        sync: false
+      - key: CLIENT_ID
+        value: "1552381611650326700"
+      - key: BOT_PREFIX
+        value: "+"
+      - key: PORT
+        value: "10000"
